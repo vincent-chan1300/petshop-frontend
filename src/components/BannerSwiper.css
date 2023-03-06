@@ -1,0 +1,69 @@
+.swiper-wrapper:hover + .swiper-button-prev {
+    opacity: 1;
+    margin-left: 0;
+    
+}
+.swiper-wrapper:hover ~ .swiper-button-next {
+    opacity: 1;
+    margin-right: 0;
+}
+.swiper-button-prev, .swiper-button-next {
+    opacity: 0;
+    
+    transition: all 300ms;
+    color: #fff;
+    border-radius: 99px;
+    border: 3px solid #fff;
+    width: 40px;
+    height: 40px;
+}
+.swiper-button-prev {
+    margin-left: -10px;
+}
+.swiper-button-next {
+    margin-right: -10px;
+}
+.swiper-button-prev:hover, .swiper-button-next:hover {
+   opacity: 1;
+   margin-left: 0;
+   margin-right: 0;
+   border-color: #543b17;
+   background-color: #543b17;
+
+}
+.swiper-button-prev::after, .swiper-button-next::after {
+    
+    font-size: 16px;
+    font-weight: bold;
+}
+.swiper-pagination {
+    bottom: 20px;
+}
+@media only screen and (max-width: 767px) {
+    .swiper-pagination {
+        bottom: 3px;
+    }
+}
+.swiper-pagination-bullet {
+    transition: opacity .3s;
+    background: transparent;
+    opacity: .4;
+    width: 12px;
+    height: 12px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+
+    margin: 0 5px;
+
+}
+.swiper-pagination-bullet:hover {
+    opacity: .7;
+}
+.swiper-pagination-bullet-active {
+    background: white;
+    opacity: 1;
+}
+.swiper-pagination-bullet-active:hover {
+    
+    opacity: 1;
+}

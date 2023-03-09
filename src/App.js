@@ -29,7 +29,7 @@ function App() {
     const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
     useEffect(() => {
-        const socket = io("ws://156.67.221.40:8080");
+        const socket = io("ws://b-m-pet-supermarket-backend.vercel.app");
         socket.off("notification").on("notification", (msgObj, user_id) => {
             // logic for notification
             if (user_id === user._id) {

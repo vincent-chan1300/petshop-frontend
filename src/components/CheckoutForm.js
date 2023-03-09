@@ -29,7 +29,7 @@ function CheckoutForm() {
         e.preventDefault();
         if (!stripe || !elements || user.cart.count <= 0) return;
         setPaying(true);
-        const { client_secret } = await fetch("http://156.67.221.40:8080/create-payment", {
+        const { client_secret } = await fetch("https://petshop-backend.onrender.com/create-payment", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

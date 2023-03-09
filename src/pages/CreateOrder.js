@@ -12,7 +12,7 @@ import axios from "axios";
 function CreateOrder() {
     useEffect(() => {
         axios
-            .get("http://156.67.221.40:8080/users")
+            .get("https://petshop-backend.onrender.com/users")
             .then(({ data }) => {
                 setMembers(data)
                 setDupMembers(data)

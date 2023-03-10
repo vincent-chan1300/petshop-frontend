@@ -29,7 +29,7 @@ function App() {
     const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
     useEffect(() => {
-        const socket = io("ws://petshop-backend.onrender.com");
+        const socket = io("ws://44.226.145.213");
         socket.off("notification").on("notification", (msgObj, user_id) => {
             // logic for notification
             if (user_id === user._id) {

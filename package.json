@@ -65,16 +65,6 @@
     "tailwindcss": "^3.1.8"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "tailwind.config.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vincent-chan1300/petshop-frontend.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/vincent-chan1300/petshop-frontend/issues"
-  },
-  "homepage": "https://github.com/vincent-chan1300/petshop-frontend#readme"
+  "main": "tailwind.config.js"
+  
 }

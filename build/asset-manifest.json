@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/vincent-chan1300/petshop-frontend/static/css/main.27b474f9.css",
+    "main.js": "/vincent-chan1300/petshop-frontend/static/js/main.8a051acd.js",
+    "static/js/787.f1fc1ffc.chunk.js": "/vincent-chan1300/petshop-frontend/static/js/787.f1fc1ffc.chunk.js",
+    "static/media/logo.png": "/vincent-chan1300/petshop-frontend/static/media/logo.1fe2f3932ecd18f9d4d6.png",
+    "index.html": "/vincent-chan1300/petshop-frontend/index.html",
+    "main.27b474f9.css.map": "/vincent-chan1300/petshop-frontend/static/css/main.27b474f9.css.map",
+    "main.8a051acd.js.map": "/vincent-chan1300/petshop-frontend/static/js/main.8a051acd.js.map",
+    "787.f1fc1ffc.chunk.js.map": "/vincent-chan1300/petshop-frontend/static/js/787.f1fc1ffc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.27b474f9.css",
+    "static/js/main.8a051acd.js"
+  ]
+}

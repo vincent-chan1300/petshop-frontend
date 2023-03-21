@@ -23,12 +23,12 @@ function CheckoutForm() {
     });
 
     const handlePay = async (data, e) => {
-        setAddress(data.address)
+        /* setAddress(data.address)
         setCountry('Hong Kong')
         e.preventDefault();
-        if (!stripe || !elements || user.cart.count <= 0) return;
-        setPaying(true);
-        const { client_secret } = await fetch("https://petshop-backend.onrender.com/create-payment", {
+        if (!stripe || !elements || user.cart.count <= 0) return; */
+        
+        /* const { client_secret } = await fetch("https://petshop-backend.onrender.com/create-payment", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -40,20 +40,20 @@ function CheckoutForm() {
             payment_method: {
                 card: elements.getElement(CardElement),
             },
-        });
+        }); */
 
-        setPaying(false);
-
-        if (paymentIntent) {
+        
+        setPaying(true);
+        
             createOrder({ userId: user._id, cart: user.cart, address, country }).then((res) => {
                 if (!isLoading && !isError) {
-                    setAlertMessage(`Payment ${paymentIntent.status}`);
+                    setAlertMessage(`提交成功`);
                     setTimeout(() => {
                         navigate("/orders");
                     }, 2000);
                 }
             });
-        }
+        setPaying(false);
     }
 
     return (
@@ -116,8 +116,8 @@ function CheckoutForm() {
                 label="以簡訊傳送最新消息和優惠活動給我"
 
             />
-            <label htmlFor="card-element">Card</label>
-            <CardElement id="card-element" />
+            {/* <label htmlFor="card-element">Card</label>
+            <CardElement id="card-element" /> */}
             {/* <Button className="mt-3" type="submit" disabled={user.cart.count <= 0 || paying || isSuccess}>
                 {paying ? "Processing..." : "Pay"}
             </Button> */}
@@ -128,50 +128,15 @@ function CheckoutForm() {
                     返回購物車
                     </a>
                 <button
-                    disabled={!isValid}
+                    disabled={!isValid || paying}
                     type="submit"
                     className="w-fit bg-theme-color-1 text-white text-base rounded-3xl px-10 py-2 mx-0 hover:opacity-80 hover:disabled:opacity-50 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                    提交
+                    {paying ? "處理中..." : "提交"}
                 </button>
             </div>
             {alertMessage && <Alert>{alertMessage}</Alert>}
 
-
-            {/* <Col className="cart-payment-container">
-                <Form onSubmit={handlePay}>
-                    <Row>
-                        {alertMessage && <Alert>{alertMessage}</Alert>}
-                        <Col md={6}>
-                            <Form.Group className="mb-3">
-                                <Form.Label>First Name</Form.Label>
-                                <Form.Control type="text" placeholder="First Name" value={user.name} disabled />
-                            </Form.Group>
-                        </Col>
-                        <Col md={6}>
-                            <Form.Group className="mb-3">
-                                <Form.Label>Email</Form.Label>
-                                <Form.Control type="text" placeholder="Email" value={user.email} disabled />
-                            </Form.Group>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col md={7}>
-                            <Form.Group className="mb-3">
-                                <Form.Label>Address</Form.Label>
-                                <Form.Control type="text" placeholder="Address" value={address} onChange={(e) => setAddress(e.target.value)} required />
-                            </Form.Group>
-                        </Col>
-                        <Col md={5}>
-                            <Form.Group className="mb-3">
-                                <Form.Label>Country</Form.Label>
-                                <Form.Control type="text" placeholder="Country" value={country} onChange={(e) => setCountry(e.target.value)} required />
-                            </Form.Group>
-                        </Col>
-                    </Row>
-
-                </Form>
-            </Col> */}
         </form>
 
     );

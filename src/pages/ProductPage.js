@@ -42,7 +42,6 @@ function ProductPage() {
         let random_product_arr = shuffled?.slice(0, 3);
 
         if (random_product_arr) {
-            console.log(random_product_arr);
             youMayAlsoLikeProducts = random_product_arr.map((product, idx) => {
                 return (
                     <div className="item" key={idx} data-value={idx}>
@@ -51,7 +50,6 @@ function ProductPage() {
                 )
             });
             setMayLikeProducts(youMayAlsoLikeProducts)
-            console.log(youMayAlsoLikeProducts);
         }
     }
 

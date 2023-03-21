@@ -72,7 +72,6 @@ function CategoryPage() {
             })
             .catch((e) => {
                 setLoading(false);
-                console.log(e.message);
             });
 
 

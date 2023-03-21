@@ -16,7 +16,6 @@ function UpdateCode() {
 
     });
     const onSubmit = (data) => {
-        console.log(data);
         try {
             updateCode({codeName: data.CodeName, codeValue: data.CodeValue})
             toast.success('已更新折扣碼')

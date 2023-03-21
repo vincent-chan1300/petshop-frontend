@@ -63,7 +63,6 @@ function CartPage() {
     });
     const onSubmit = async (data, e) => {
         e.preventDefault()
-        console.log(data);
         Object.keys(data).forEach(function (key) {
             if (data[key] === undefined) {
                 data[key] = ""

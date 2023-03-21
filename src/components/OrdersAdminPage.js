@@ -18,7 +18,6 @@ function OrdersAdminPage() {
             .then(({ data }) => {
                 setLoading(false);
                 setOrders(data);
-                console.log(data);
             })
             .catch((e) => {
                 setLoading(false);
@@ -56,7 +55,6 @@ function OrdersAdminPage() {
             delete productCopy.description;
             return productCopy;
         });
-        console.log(productsToShow);
         setShow(true);
         setOrderToShow(productsToShow);
     }

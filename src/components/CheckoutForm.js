@@ -23,7 +23,6 @@ function CheckoutForm() {
     });
 
     const handlePay = async (data, e) => {
-        console.log(data);
         setAddress(data.address)
         setCountry('Hong Kong')
         e.preventDefault();
@@ -56,36 +55,6 @@ function CheckoutForm() {
             });
         }
     }
-    /* async function handlePay(e) {
-        e.preventDefault();
-        if (!stripe || !elements || user.cart.count <= 0) return;
-        setPaying(true);
-        const { client_secret } = await fetch("http://localhost:8080/create-payment", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: "Bearer ",
-            },
-            body: JSON.stringify({ amount: user.cart.total }),
-        }).then((res) => res.json());
-        const { paymentIntent } = await stripe.confirmCardPayment(client_secret, {
-            payment_method: {
-                card: elements.getElement(CardElement),
-            },
-        });
-        setPaying(false);
-
-        if (paymentIntent) {
-            createOrder({ userId: user._id, cart: user.cart, address, country }).then((res) => {
-                if (!isLoading && !isError) {
-                    setAlertMessage(`Payment ${paymentIntent.status}`);
-                    setTimeout(() => {
-                        // navigate("/orders");
-                    }, 3000);
-                }
-            });
-        }
-    } */
 
     return (
         <form noValidate onSubmit={handleSubmit(handlePay)} className="mt-10">
@@ -149,9 +118,9 @@ function CheckoutForm() {
             />
             <label htmlFor="card-element">Card</label>
             <CardElement id="card-element" />
-            <Button className="mt-3" type="submit" disabled={user.cart.count <= 0 || paying || isSuccess}>
+            {/* <Button className="mt-3" type="submit" disabled={user.cart.count <= 0 || paying || isSuccess}>
                 {paying ? "Processing..." : "Pay"}
-            </Button>
+            </Button> */}
 
             <div className="flex items-center justify-between mt-5">
                 <a href="/cart" className="flex gap-x-2 items-center text-base text-theme-color-1 hover:opacity-75" >

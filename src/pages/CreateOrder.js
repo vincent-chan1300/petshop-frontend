@@ -16,7 +16,6 @@ function CreateOrder() {
             .then(({ data }) => {
                 setMembers(data)
                 setDupMembers(data)
-                console.log(data);
             })
             .catch((e) => {
                 console.log(e.message);
@@ -65,7 +64,6 @@ function CreateOrder() {
 
         if (searchKeyWord !== "") {
             let matched = members.filter((member) => member.name.toLowerCase().includes(searchKeyWord.toLowerCase()));
-            console.log(matched);
             setMembers(matched);
         } else {
             setMembers(dupMembers);

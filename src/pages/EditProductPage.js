@@ -32,7 +32,6 @@ function EditProductPage({ product_id }) {
                 setPrice(product.price);
             })
             .catch((e) => console.log(e));
-        console.log(category);
     }, [id]);
 
     function handleRemoveImg(imgObj) {

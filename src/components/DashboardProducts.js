@@ -48,17 +48,12 @@ function DashboardProducts() {
                 break;
         }
 
-
-        console.log(searchCategory);
-        console.log(searchPrice);
-
     }, [searchCategory, searchPrice])
 
     const handleSearchKeyWord = (e) => {
         e.preventDefault();
         if (searchKeyWord !== "") {
             let matched = dupProduct.filter((product) => product.name.toLowerCase().includes(searchKeyWord.toLowerCase()));
-            console.log(matched);
             setDupProduct(matched);
         } else {
             setDupProduct(products);

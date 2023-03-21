@@ -19,7 +19,6 @@ function ClientsAdminPage() {
             })
             .catch((e) => {
                 setLoading(false);
-                console.log(e);
             });
     }, []);
     const casesPerPage = 10;

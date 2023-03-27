@@ -29,18 +29,7 @@ function App() {
     const user = useSelector((state) => state.user);
     const dispatch = useDispatch();
     useEffect(() => {
-        /* const socket = io("https://petshop-backend.onrender.com/");
-        socket.off("notification").on("notification", (msgObj, user_id) => {
-            if (user_id === user._id) {
-                dispatch(addNotification(msgObj));
-            }
-        });
-
-        socket.off("new-order").on("new-order", (msgObj) => {
-            if (user.isAdmin) {
-                dispatch(addNotification(msgObj));
-            }
-        }); */
+        
     }, []);
     return (
         <div className="App">
